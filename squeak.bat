@@ -41,10 +41,13 @@ if %option%==0 (
     goto menu
 ) if %option%==2 (
     :: Malware Scan
+    echo Virus Removal tool is in development!
     :: https://support.kaspersky.com/kvrt2015/howto/8537
-    echo Starting malware scan...
-    call ".\malware_scans\KVRT.exe" -accepteula -silent -processlevel 2
-    echo Scan complete! Press enter to return to the main menu.
+    ::echo Downloading Kaspersky Virus Removal Tool...
+    :: Need to track down download link.
+    ::echo Starting malware scan...
+    ::call ".\malware_scans\KVRT.exe" -accepteula -silent -processlevel 2
+    ::echo Scan complete! Press enter to return to the main menu.
     pause > NUL 
     goto menu
 ) if %option%==3 (
