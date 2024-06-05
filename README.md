@@ -26,8 +26,8 @@ At this point, only the scan functionality is functional, but many more are plan
 2. 🟡 Antivirus Removal - Active Development.<br>
 3. 🟠 Malware Scan - Planning.<br>
 4. 🟠 Install Software - Planning.<br>
-5. 🔴 System Maintenance - TBD.<br>
-6. 🔴Remove Windows Bload - TBD
+5. 🟡 System Maintenance - Active Development.<br>
+6. 🔴 Remove Windows Bloat - TBD
 
 <h2>
   Issues
