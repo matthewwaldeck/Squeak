@@ -28,3 +28,8 @@ At this point, only the scan functionality is functional, but many more are plan
 4. 🟠 Install Software - Planning.<br>
 5. 🔴 System Maintenance - TBD.<br>
 6. 🔴Remove Windows Bload - TBD
+
+<h2>
+  Issues
+</h2>
+Please note that this software is in active development, and as such you will likely see bugs and issues. I will be using the "Issues" page here on GitHub as a bug tracker, as well as for feature requests. If there is anything you'd like to see added, please submit it there and I will take a look.
