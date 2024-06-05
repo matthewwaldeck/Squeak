@@ -21,12 +21,12 @@ Squeak is designed to be used by anyone, but it is meant for administrators and 
 <h2>
   Tools
 </h2>
-At this point, only the scan functionality is functional, but many more are planned. Details below:<br>
+At this point, only the diagnostic functionality is live, but other features are in beta testing and many more are planned:<br>
 1. 🟢 Hardware Check - Live.<br>
-2. 🟡 Antivirus Removal - Active Development.<br>
-3. 🟠 Malware Scan - Planning.<br>
-4. 🟠 Install Software - Planning.<br>
-5. 🟡 System Maintenance - Active Development.<br>
+2. 🟡 Antivirus Removal - Testing.<br>
+3. 🔴 Malware Scan - Planning.<br>
+4. 🔴 Install Software - Planning.<br>
+5. 🔵 System Maintenance - Active Development.<br>
 6. 🔴 Remove Windows Bloat - TBD
 
 <h2>
