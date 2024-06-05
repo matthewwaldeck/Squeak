@@ -7,7 +7,7 @@ cls
 ::: (_)_/  |____/ \__, |\__,_|\___|\__,_|_|\_\
 :::                  |_|                        
 :::Antivirus Removal Tool
-:::Version: 1.0.1 BETA
+:::Version: 1.0.2 BETA
 :::Developed by: Matt Waldeck
 :::Last update: 2024.06.05
 
@@ -16,9 +16,7 @@ cls
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo %%A
 echo.
 
-:: REMOVE THIS BLOCK ONCE TESTING IS COMPLETE.
 pause
-goto eof
 
 set "remove_av="
 
