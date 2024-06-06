@@ -7,9 +7,9 @@ cls
 :::  _ / /  ___) | (_| | |_| |  __/ (_| |   < 
 ::: (_)_/  |____/ \__, |\__,_|\___|\__,_|_|\_\
 :::                  |_|                        
-:::Version: 1.1.0
+:::Version: 1.1.1
 :::Developed by: Matt Waldeck
-:::Last update: 2024.06.05
+:::Last updated: 2024.06.06
 
 :: Logo display.
 :: Artwork: https://patorjk.com/software/taag/#p=display&f=Standard&t=.%2FSqueak
@@ -63,9 +63,9 @@ if %option%==1 (
 :: Antivirus Removal
 if %option%==2 (
     echo Starting antivirus removal script...
-    timeout 2 > NUL
+    timeout 1 > NUL
     start .\av_removal\av_removal.bat
-    timeout 2 > NUL
+    timeout 1 > NUL
     goto main
 )
 
@@ -84,7 +84,7 @@ if %option%==3 (
     goto main
 )
 
-:: Install Software
+:: Software Install
 if %option%==4 (
     echo Install scripts are in development!
     :: powershell.exe -executionpolicy unrestricted ./setup.ps1
@@ -94,9 +94,10 @@ if %option%==4 (
 
 :: System Maintenance
 if %option%==5 (
-    echo System maintenance script is in development!
-    :: powershell start-process powershell.exe -File .\library\maintenance.ps1 -verb runas
-    pause
+    echo Starting maintenance script...
+    timeout 1 > NUL
+    start .\library\maintenance.bat
+    timeout 1 > NUL
     goto main
 )
 
