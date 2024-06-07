@@ -7,9 +7,9 @@ cls
 :::  _ / /  ___) | (_| | |_| |  __/ (_| |   < 
 ::: (_)_/  |____/ \__, |\__,_|\___|\__,_|_|\_\
 :::                  |_|                        
-:::Version: 1.1.1
+:::Version: 1.1.2
 :::Developed by: Matt Waldeck
-:::Last updated: 2024.06.06
+:::Last updated: 2024.06.07
 
 :: Logo display.
 :: Artwork: https://patorjk.com/software/taag/#p=display&f=Standard&t=.%2FSqueak
@@ -48,7 +48,7 @@ if %option%==1 (
     wmic path softwareLicensingService get OA3xOriginalProductKey > C:\Temp\Squeak\Diagnostic\Activation.txt
 
     :: Attached disks.
-    wmic diskdrive get name,model,size > C:\Temp\Squeak\Diagnostic\Disks.txt
+    wmic diskdrive get model,name,size,status > C:\Temp\Squeak\Diagnostic\Disks.txt
 
     :: Installed software.
     echo Gathering software information. This will take some time...
@@ -80,15 +80,14 @@ if %option%==3 (
     :: echo Starting malware scan...
     :: call "C:\Temp\Squeak\Malware Removal\KVRT.exe" -accepteula -silent -processlevel 2
     :: echo Scan complete! Press enter to return to the main main.
-    pause
+    timeout 3 > NUL
     goto main
 )
 
 :: Software Install
 if %option%==4 (
     echo Install scripts are in development!
-    :: powershell.exe -executionpolicy unrestricted ./setup.ps1
-    pause
+    timeout 3 > NUL
     goto main
 )
 
@@ -104,7 +103,7 @@ if %option%==5 (
 :: Remove Bloatware
 if %option%==6 (
     echo Bloatware removal script is in development!
-    pause
+    timeout 3 > NUL
     goto main
 )
 
