@@ -5,9 +5,9 @@ cls
 :::     / /\___ \ / _` | | | |/ _ \/ _` | |/ /
 :::  _ / /  ___) | (_| | |_| |  __/ (_| |   < 
 ::: (_)_/  |____/ \__, |\__,_|\___|\__,_|_|\_\
-:::                  |_|                        
+:::                  |_|                      
 :::Maintenance Tool
-:::Version: 1.0.0
+:::Version: 1.1.0
 :::Developed by: Matt Waldeck
 :::Last update: 2024.06.06
 
@@ -45,21 +45,38 @@ if '%errorlevel%' NEQ '0' (
 :: Empty recycle bin
 echo Emptying recycle bin...
 rd /s %systemdrive%\$Recycle.bin
+echo "Recycle Bin has been emptied." > C:\Temp\Squeak\Maintenance_%COMPUTERNAME%_%DATE%.txt
 echo Done.
 echo.
 
 :: Defragment disks
 echo Beginning disk defragmentation.
 echo This could take some time on older drives...
-defrag /C /O
+defrag /C /O >> C:\Temp\Squeak\Maintenance_%COMPUTERNAME%_%DATE%.txt
 echo Done.
+echo.
+
+:: SMART status check.
+echo Checking SMART status...
+wmic diskdrive get model,status >> C:\Temp\Squeak\Maintenance_%COMPUTERNAME%_%DATE%.txt
+echo Done.
+echo.
+
+:: Disk scan.
+echo Beginning disk scan...
+chkdsk >> C:\Temp\Squeak\Maintenance_%COMPUTERNAME%_%DATE%.txt
+echo Done. If errors were found, please run 'chkdsk /F' from
+echo an elevated prompt and schedule for next reboot.
+timeout 1 > NUL
 echo.
 
 :: File system scan
 echo Beginning SFC scan, this will take some time...
-sfc /scannow
+sfc /scannow >> C:\Temp\Squeak\Maintenance_%COMPUTERNAME%_%DATE%.txt
 echo Done.
 echo.
 
-echo Maintenance complete.
+echo Maintenance complete. Please check the log
+echo file located at C:\Temp\Squeak for results.
+echo.
 pause
