@@ -7,9 +7,9 @@ cls
 :::  _ / /  ___) | (_| | |_| |  __/ (_| |   < 
 ::: (_)_/  |____/ \__, |\__,_|\___|\__,_|_|\_\
 :::                  |_|                        
-:::Version: 1.1.2
+:::Version: 1.1.3
 :::Developed by: Matt Waldeck
-:::Last updated: 2024.06.07
+:::Last updated: 2024.06.24
 
 :: Logo display.
 :: Artwork: https://patorjk.com/software/taag/#p=display&f=Standard&t=.%2FSqueak
@@ -73,12 +73,7 @@ if %option%==2 (
 if %option%==3 (
     echo Virus Removal tool is in development!
     :: mkdir "C:\Temp\Squeak\Malware Removal" > NUL 2>&1
-    :: https://support.kaspersky.com/kvrt2015/howto/8537
-    :: echo Downloading Kaspersky Virus Removal Tool...
-    :: Need to track down download link.
-    :: curl https://downfromhere.kaspersky.com/
     :: echo Starting malware scan...
-    :: call "C:\Temp\Squeak\Malware Removal\KVRT.exe" -accepteula -silent -processlevel 2
     :: echo Scan complete! Press enter to return to the main main.
     timeout 3 > NUL
     goto main
@@ -86,8 +81,10 @@ if %option%==3 (
 
 :: Software Install
 if %option%==4 (
-    echo Install scripts are in development!
-    timeout 3 > NUL
+    echo Starting software install script...
+    timeout 1 > NUL
+    start .\library\install.bat
+    timeout 1 > NUL
     goto main
 )
 
